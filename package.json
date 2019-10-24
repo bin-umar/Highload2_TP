@@ -1,0 +1,22 @@
+{
+  "name": "highload2_tp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bin-umar/Highload2_TP.git"
+  },
+  "keywords": [
+    "http"
+  ],
+  "author": "Jahongir Tulforov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bin-umar/Highload2_TP/issues"
+  },
+  "homepage": "https://github.com/bin-umar/Highload2_TP#readme"
+}
