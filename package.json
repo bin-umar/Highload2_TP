@@ -4,6 +4,7 @@
   "description": "",
   "main": "app",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/bin-umar/Highload2_TP/issues"
   },
-  "homepage": "https://github.com/bin-umar/Highload2_TP#readme"
+  "homepage": "https://github.com/bin-umar/Highload2_TP#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.9.1"
+  }
 }
