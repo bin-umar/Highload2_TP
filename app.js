@@ -2,6 +2,8 @@
 
 const express = require('express');
 const path = require('path');
+const url = require('url');
+const fs = require('fs');
 const morgan = require('morgan');
 
 const sleep = (ms) => {
@@ -9,13 +11,20 @@ const sleep = (ms) => {
 };
 
 const app = express();
-app.use(express.static(path.resolve(__dirname, 'public')));
+app.use(express.static(path.resolve(__dirname)));
 app.use(morgan('dev'));
 
 app.get('*', async (req, res) => {
     await sleep(2000);
 
-    res.json({message: 'ok'});
+    const parsed = url.parse(req.url);
+    const filename = path.basename(parsed.pathname);
+
+    if (fs.existsSync(filename)) {
+        res.sendFile(filename);
+    } else {
+        res.json({message: 'ok'});
+    }
 });
 
 const port = process.env.PORT || 8000;
