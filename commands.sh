@@ -1,15 +1,17 @@
 apt-get update
-apt-get install nginx
-apt-get install apache2-utils
+apt-get install nginx -y
+apt-get install apache2-utils -y
 
 wget https://github.com/prometheus/prometheus/releases/download/v2.11.2/prometheus-2.11.2.linux-amd64.tar.gz
 tar xvzf prometheus-2.11.2.linux-amd64.tar.gz
 useradd -rs /bin/false prometheus
 cd prometheus-2.11.2.linux-amd64
+cp prometheus promtool /usr/local/bin
 sudo chown prometheus:prometheus /usr/local/bin/prometheus
 mkdir /etc/prometheus
 cp -R consoles/ console_libraries/ prometheus.yml /etc/prometheus
-mkdir -p data/prometheus
+mkdir -p /data/prometheus
+chmod -R 777 /data
 chown -R prometheus:prometheus data/prometheus /etc/prometheus/*
 cd ..
 
