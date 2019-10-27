@@ -27,7 +27,7 @@ cp webserver/prometheus.service /lib/systemd/system
 cp webserver/prometheus.conf /etc/nginx/conf.d/
 cp webserver/node_exporter.service /lib/systemd/system
 cp \y webserver/prometheus.yml /etc/prometheus/
-cp \y webserver/default.conf /etc/nginx/sites-enabled/
+cp \y webserver/default /etc/nginx/sites-enabled/
 
 systemctl daemon-reaload
 systemctl restart nginx
