@@ -15,8 +15,6 @@ app.use(express.static(path.resolve(__dirname)));
 app.use(morgan('dev'));
 
 app.get('*', async (req, res) => {
-    await sleep(2000);
-
     const parsed = url.parse(req.url);
     const filename = path.basename(parsed.pathname);
 

@@ -12,7 +12,7 @@ mkdir /etc/prometheus
 cp -R consoles/ console_libraries/ prometheus.yml /etc/prometheus
 mkdir -p /data/prometheus
 chmod -R 777 /data
-chown -R prometheus:prometheus data/prometheus /etc/prometheus/*
+chown -R prometheus:prometheus /data/prometheus /etc/prometheus/*
 cd ..
 
 wget https://github.com/prometheus/node_exporter/releases/download/v0.18.1/node_exporter-0.18.1.linux-amd64.tar.gz
@@ -29,7 +29,7 @@ cp webserver/node_exporter.service /lib/systemd/system
 cp \y webserver/prometheus.yml /etc/prometheus/
 cp \y webserver/default /etc/nginx/sites-enabled/
 
-systemctl daemon-reaload
+systemctl daemon-reload
 systemctl restart nginx
 systemctl enable prometheus
 systemctl start prometheus
