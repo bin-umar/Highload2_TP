@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/bin-umar/Highload2_TP#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "morgan": "^1.9.1"
   }
 }
